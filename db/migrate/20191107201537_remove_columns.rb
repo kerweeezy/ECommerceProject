@@ -2,8 +2,6 @@
 
 class RemoveColumns < ActiveRecord::Migration[6.0]
   def self.up
-    def self.up
-      remove_column :jerseys, :image
-    end
+    remove_column :jerseys, :image
   end
 end

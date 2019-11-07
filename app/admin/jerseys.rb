@@ -6,7 +6,7 @@ ActiveAdmin.register Jersey do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :fullName, :description, :price, :team_id, :image
+  permit_params :name, :description, :price, :team_id, :image
   #
   # or
   #
