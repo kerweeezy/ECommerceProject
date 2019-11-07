@@ -3,7 +3,7 @@
 class Team < ApplicationRecord
   has_many :jerseys
 
-  has_one_attached :img
+  has_one_attached :image
 
   validates :name, presence: true
 end

@@ -6,7 +6,7 @@ ActiveAdmin.register Jersey do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :fullName, :description, :price, :image, :team_id, :img
+  permit_params :fullName, :description, :price, :team_id, :image
   #
   # or
   #
@@ -19,7 +19,7 @@ ActiveAdmin.register Jersey do
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
     f.inputs do
-      f.input :img, as: :file
+      f.input :image, as: :file
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end

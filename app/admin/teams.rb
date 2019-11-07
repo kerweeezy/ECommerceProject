@@ -6,7 +6,7 @@ ActiveAdmin.register Team do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :img
+  permit_params :name, :image
   #
   # or
   #
@@ -20,7 +20,7 @@ ActiveAdmin.register Team do
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
     f.inputs do
-      f.input :img, as: :file
+      f.input :image, as: :file
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
