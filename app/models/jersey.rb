@@ -5,5 +5,5 @@ class Jersey < ApplicationRecord
 
   has_one_attached :image
 
-  validates :name, :fullName, :description, :price, presence: true
+  validates :name, :name, :description, :price, presence: true
 end

@@ -1,0 +1,8 @@
+<h1>Jerseys#index</h1>
+
+<% @jerseys.each do |jersey| %>
+  <p><%= image_tag url_for(jersey.image) %></p>
+  <ul>
+    <li><%= jersey.name %></li>
+    <li><%= jersey.price %></li>
+<% end %>
