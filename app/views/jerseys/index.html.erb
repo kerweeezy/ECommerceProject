@@ -1,8 +1,11 @@
 <h1>Jerseys#index</h1>
 
 <% @jerseys.each do |jersey| %>
-  <p><%= image_tag url_for(jersey.image) %></p>
-  <ul>
-    <li><%= jersey.name %></li>
-    <li><%= jersey.price %></li>
+  <div>
+    <img <%= image_tag url_for(jersey.image) %> >
+    <div>
+      <p><%= jersey.name %></p>
+      <p><%= jersey.price %></p>
+    </div>
+  </div>
 <% end %>
