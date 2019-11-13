@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_203505) do
+ActiveRecord::Schema.define(version: 2019_11_13_211216) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -59,6 +59,30 @@ ActiveRecord::Schema.define(version: 2019_11_07_203505) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "postalcode"
+    t.string "address"
+    t.string "password"
+    t.integer "province_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["province_id"], name: "index_customers_on_province_id"
+  end
+
+  create_table "jersey_orders", force: :cascade do |t|
+    t.integer "quantity"
+    t.decimal "unit_price"
+    t.integer "jersey_id", null: false
+    t.integer "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jersey_id"], name: "index_jersey_orders_on_jersey_id"
+    t.index ["order_id"], name: "index_jersey_orders_on_order_id"
+  end
+
   create_table "jerseys", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -69,6 +93,22 @@ ActiveRecord::Schema.define(version: 2019_11_07_203505) do
     t.index ["team_id"], name: "index_jerseys_on_team_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal"
+    t.decimal "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.decimal "pst"
+    t.decimal "gst"
+    t.decimal "hst"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -76,5 +116,8 @@ ActiveRecord::Schema.define(version: 2019_11_07_203505) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "customers", "provinces"
+  add_foreign_key "jersey_orders", "jerseys"
+  add_foreign_key "jersey_orders", "orders"
   add_foreign_key "jerseys", "teams"
 end
