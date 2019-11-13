@@ -72,6 +72,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
+    autoprefixer-rails (9.7.1)
+      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -80,6 +82,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -273,6 +278,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bootsnap (>= 1.4.2)
+  bootstrap-sass (~> 3.4.1)
   byebug
   capybara (>= 2.15)
   devise
@@ -281,6 +287,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.1)
   sass-rails (>= 6)
+  sassc-rails (>= 2.1.0)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
