@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'team/index'
   get 'jerseys/index'
   get 'jerseys/show'
 
