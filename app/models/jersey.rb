@@ -8,5 +8,6 @@ class Jersey < ApplicationRecord
 
   has_one_attached :image
 
-  validates :name, :name, :description, :price, presence: true
+  validates :name, :description, :price, presence: true
+  validates :price, numericality: { only_decimal: true }
 end
