@@ -1,8 +1,6 @@
-<h1>Jerseys#index</h1>
-
 <% @jerseys.each do |jersey| %>
   <div>
-    <img class="img-thumbnail" <%= image_tag url_for(jersey.image) %>>
+    <%= image_tag url_for(jersey.image), class: 'img-thumbnail' if jersey.image.present? %>
     <div>
       <p><%= jersey.name %></p>
       <p><%= jersey.price %></p>

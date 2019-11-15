@@ -1,0 +1,11 @@
+<h2><%= @team.name %></h2>
+
+<% @team.jerseys.each do |jersey| %>
+   <div class="row">
+      <div class="col-sm">
+        <%= image_tag url_for(jersey.image), class: 'img-thumbnail' if jersey.image.present? %>
+        <p><%= jersey.name %></p>
+        <p><%= jersey.price %></p>
+      </div>
+    </div>
+<% end %>

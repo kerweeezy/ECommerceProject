@@ -2,15 +2,7 @@
    <div class="row">
       <div class="col-sm">
         <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
-        <p><%= team.name %></p>
-      </div>
-      <div class="col-sm">
-        <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
-        <p><%= team.name %></p>
-      </div>
-      <div class="col-sm">
-        <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
-        <p><%= team.name %></p>
+        <p><%= link_to team.name, team, class: 'btn btn-link' %></p>
       </div>
     </div>
 <% end %>
