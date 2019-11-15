@@ -24,4 +24,12 @@ ActiveAdmin.register Team do
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
+
+  index do
+    selectable_column
+    column :name
+    column :image do |logo|
+      image_tag url_for(logo.image), class: 'image-preview' if logo.image.present?
+    end
+  end
 end
