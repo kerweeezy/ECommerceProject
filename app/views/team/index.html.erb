@@ -1,8 +1,16 @@
 <% @teams.each do |team| %>
-  <div>
-    <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
-    <div>
-      <p><%= team.name %></p>
+   <div class="row">
+      <div class="col-sm">
+        <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
+        <p><%= team.name %></p>
+      </div>
+      <div class="col-sm">
+        <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
+        <p><%= team.name %></p>
+      </div>
+      <div class="col-sm">
+        <%= image_tag url_for(team.image), class: 'img-thumbnail' if team.image.present? %>
+        <p><%= team.name %></p>
+      </div>
     </div>
-  </div>
 <% end %>
