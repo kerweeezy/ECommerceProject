@@ -31,5 +31,6 @@ ActiveAdmin.register Team do
     column :image do |logo|
       image_tag url_for(logo.image), class: 'image-preview' if logo.image.present?
     end
+    actions
   end
 end

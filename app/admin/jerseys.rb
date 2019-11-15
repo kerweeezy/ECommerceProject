@@ -23,4 +23,13 @@ ActiveAdmin.register Jersey do
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
+
+  index do
+    selectable_column
+    column :name
+    column :image do |jersey|
+      image_tag url_for(jersey.image), class: 'image-preview' if jersey.image.present?
+    end
+    actions
+  end
 end
