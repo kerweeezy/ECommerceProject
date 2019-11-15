@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'page/contact'
+  get 'page/about'
   resources :team, only: %i[index show]
   resources :jerseys, only: %i[index show]
 
