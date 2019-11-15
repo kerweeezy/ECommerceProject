@@ -17,6 +17,7 @@ ActiveAdmin.register Jersey do
   # end
   index do
     selectable_column
+    id_column
     column :name
     column :description
     column :price
@@ -24,6 +25,17 @@ ActiveAdmin.register Jersey do
       image_tag url_for(jersey.image), class: 'image-preview', height: '10%', width: '20%' if jersey.image.present?
     end
     actions
+  end
+
+  show do
+    selectable_column
+    id_column
+    column :name
+    column :description
+    column :price
+    column :image do |jersey|
+      image_tag url_for(jersey.image), class: 'image-preview', height: '10%', width: '20%' if jersey.image.present?
+    end
   end
 
   form do |f| # This is a formtastic form builder.
