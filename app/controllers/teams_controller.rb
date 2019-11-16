@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TeamController < ApplicationController
+class TeamsController < ApplicationController
   def index
     @teams = Team.all
   end
