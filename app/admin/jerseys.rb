@@ -27,17 +27,6 @@ ActiveAdmin.register Jersey do
     actions
   end
 
-  show do
-    selectable_column
-    id_column
-    column :name
-    column :description
-    column :price
-    column :image do |jersey|
-      image_tag url_for(jersey.image), class: 'image-preview', height: '10%', width: '20%' if jersey.image.present?
-    end
-  end
-
   form do |f| # This is a formtastic form builder.
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
