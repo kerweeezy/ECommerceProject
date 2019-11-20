@@ -2,7 +2,7 @@
 
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @pagy, @teams = pagy(Team.all)
   end
 
   def show
