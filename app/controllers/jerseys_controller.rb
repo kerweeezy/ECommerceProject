@@ -7,5 +7,7 @@ class JerseysController < ApplicationController
     @pagy, @jerseys = pagy(Jersey.all)
   end
 
-  def show; end
+  def show
+    @jersey = Jersey.find(params[:id])
+  end
 end

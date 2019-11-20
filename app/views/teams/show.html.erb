@@ -3,9 +3,10 @@
 <% @team.jerseys.each do |jersey| %>
    <div class="row">
       <div class="col-sm">
-        <%= image_tag url_for(jersey.image), class: 'img-thumbnail' if jersey.image.present? %>
-        <p><%= jersey.name %></p>
-        <p><%= jersey.price %></p>
+        <%= link_to (image_tag url_for(jersey.image)), jersey, class: 'img-thumbnail' %>
+        <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
+        <%= number_to_currency jersey.price %>
+        <button type="button" class="btn btn-info">Add to Cart</button>
       </div>
     </div>
 <% end %>

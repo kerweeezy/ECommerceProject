@@ -1,2 +1,4 @@
-<h1>Jerseys#show</h1>
-<p>Find me in app/views/jerseys/show.html.erb</p>
+<%= image_tag url_for(@jersey.image), class: 'img-thumbnail' %>
+<h2><%= @jersey.name %></h2>
+<p><%= number_to_currency @jersey.price %></p>
+<button type="button" class="btn btn-info">Add to Cart</button>

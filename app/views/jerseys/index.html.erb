@@ -2,8 +2,9 @@
   <div>
     <%= image_tag url_for(jersey.image), class: 'img-thumbnail' if jersey.image.present? %>
     <div>
-      <p><%= jersey.name %></p>
-      <p><%= jersey.price %></p>
+      <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
+      <%= jersey.price %>
+      <button type="button" class="btn btn-info">Add to Cart</button>
     </div>
   </div>
 <% end %>
