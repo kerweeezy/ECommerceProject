@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'pages/contact'
-  get 'pages/about'
+  get '/about', to: 'pages#about', as: 'about'
+  get '/contact', to: 'pages#contact', as: 'contact'
+
   resources :teams, only: %i[index show]
   resources :jerseys, only: %i[index show]
 

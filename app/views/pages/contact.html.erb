@@ -1,2 +1,4 @@
-<h1>Page#contact</h1>
-<p>Find me in app/views/page/contact.html.erb</p>
+<% @contact.each do |contact| %>
+      <h1> <%= contact.title %> </h1>
+      <%= contact.content %>
+<% end %>

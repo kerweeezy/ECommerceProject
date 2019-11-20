@@ -1,2 +1,4 @@
-<h1>Page#about</h1>
-<p>Find me in app/views/page/about.html.erb</p>
+<% @about.each do |about| %>
+      <h1> <%= about.title %> </h1>
+      <%= about.content %>
+<% end %>
