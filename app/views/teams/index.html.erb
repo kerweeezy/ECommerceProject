@@ -1,7 +1,7 @@
 <div class="col">
   <% @teams.each do |team| %>
-    <%= image_tag url_for(team.image), class: 'img-thumbnail' %>
-    <p><%= link_to team.name, team, class: 'btn btn-link' %></p>
+      <%= image_tag url_for(team.image), class: 'img-thumbnail', width: '25%' %>
+      <%= link_to team.name, team, class: 'btn btn-link' %>
   <% end %>
 </div>
 
