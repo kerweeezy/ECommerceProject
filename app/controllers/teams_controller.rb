@@ -10,4 +10,9 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
   end
+
+  def search_results
+    @query = params[:query]
+    @teams = Team.where('name LIKE ?', "%#{@query}%")
+  end
 end

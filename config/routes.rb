@@ -4,8 +4,17 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
 
-  resources :teams, only: %i[index show]
-  resources :jerseys, only: %i[index show]
+  resources :teams, only: %i[index show] do
+    collection do
+      get 'search_results'
+    end
+  end
+
+  resources :jerseys, only: %i[index show] do
+    collection do
+      get 'search_results'
+    end
+  end
 
   root 'teams#index'
 

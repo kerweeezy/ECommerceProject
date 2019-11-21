@@ -1,0 +1,7 @@
+<p><%= pluralize(@teams.size, 'result') %> for '<%= @query %>'</p>
+<div class="col">
+  <% @teams.each do |team| %>
+      <%= link_to (image_tag url_for(team.image)), team, width: '25%' %>
+      <%= link_to team.name, team, class: 'btn btn-link' %>
+  <% end %>
+</div>

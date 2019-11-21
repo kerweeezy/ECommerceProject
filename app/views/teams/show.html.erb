@@ -1,12 +1,14 @@
-<h2><%= @team.name %></h2>
-
-<% @team.jerseys.each do |jersey| %>
-   <div class="row">
-      <div class="col-sm">
-        <%= link_to (image_tag url_for(jersey.image)), jersey, class: 'img-thumbnail' %>
-        <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
-        <%= number_to_currency jersey.price %>
-        <button type="button" class="btn btn-info">Add to Cart</button>
-      </div>
-    </div>
+<%= form_with(url: search_results_jerseys_path, method: "get", local: true) do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
 <% end %>
+<h2><%= @team.name %></h2>
+<div class="col">
+  <% @team.jerseys.each do |jersey| %>
+    <%= link_to (image_tag url_for(jersey.image)), jersey, class: 'img-thumbnail' %>
+    <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
+    <%= number_to_currency jersey.price %>
+    <button type="button" class="btn btn-info">Add to Cart</button>
+  <% end %>
+</div>

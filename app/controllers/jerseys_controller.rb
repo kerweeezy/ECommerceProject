@@ -10,4 +10,9 @@ class JerseysController < ApplicationController
   def show
     @jersey = Jersey.find(params[:id])
   end
+
+  def search_results
+    @query = params[:query]
+    @jerseys = Jersey.where('name LIKE ?', "%#{@query}%")
+  end
 end

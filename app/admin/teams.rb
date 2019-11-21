@@ -29,7 +29,7 @@ ActiveAdmin.register Team do
     selectable_column
     column :name
     column :image do |logo|
-      image_tag url_for(logo.image), class: 'image-preview', width: '30%' if logo.image.present?
+      image_tag url_for(logo.image), class: 'image-preview' if logo.image.present?
     end
     actions
   end

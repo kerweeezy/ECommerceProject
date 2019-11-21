@@ -22,7 +22,7 @@ ActiveAdmin.register Jersey do
     column :description
     column :price
     column :image do |jersey|
-      image_tag url_for(jersey.image), class: 'image-preview', height: '10%', width: '20%' if jersey.image.present?
+      image_tag url_for(jersey.image), class: 'image-preview' if jersey.image.present?
     end
     actions
   end
