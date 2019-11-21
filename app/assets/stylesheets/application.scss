@@ -17,3 +17,27 @@
 a, a:link, a:visited {
   text-decoration: none;
 }
+
+$main-text: #2a2a2a;
+$light-text: #888888;
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    color: $main-text;
+    letter-spacing: 1px;
+}
+
+%unemphasized-link {
+    a {
+        color: $main-text;
+        text-decoration: none;
+    }
+}
+.menu {
+    @extend %unemphasized-link;
+    background-color: rgba(255, 255, 255, 0.883);
+
+    a {
+        margin-right: 50px;
+    }
+}

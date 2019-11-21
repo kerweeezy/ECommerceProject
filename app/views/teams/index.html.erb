@@ -3,13 +3,11 @@
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
-<div class="container">
-  <div class="col">
-    <% @teams.each do |team| %>
-        <%= image_tag url_for(team.image), class: 'img-thumbnail' %>
-        <%= link_to team.name, team, class: 'btn btn-link' %>
-    <% end %>
-  </div>
+<div class="col-lg-">
+  <% @teams.each do |team| %>
+      <p><%= image_tag url_for(team.image), class: 'img-thumbnail' %><p>
+      <p><%= link_to team.name, team, class: 'btn btn-link' %></p>
+  <% end %>
+</div>
 
 <%== pagy_bootstrap_nav(@pagy) %>
-</div>

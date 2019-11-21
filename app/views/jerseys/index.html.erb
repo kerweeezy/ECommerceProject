@@ -3,13 +3,30 @@
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 <% end %>
+
+<details>
+  <summary>Shopping Cart</summary>
+  <% if @cart.empty? %>
+    <p>No items in cart</p>
+  <% else %>
+    <ul>
+      <% @cart.each do |jersey| %>
+        <li><%= jersey.name %> - <%= link_to 'remove from cart', remove_from_cart_path(jersey), method: :delete %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</details>
 <div class="col">
-<% @jerseys.each do |jersey| %>
-    <%= image_tag url_for(jersey.image), class: 'img-thumbnail', width: '25%' %>
-    <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
-    <%= jersey.price %>
-    <button type="button" class="btn btn-info">Add to Cart</button>
-<% end %>
+  <% @jerseys.each do |jersey| %>
+    <p><%= image_tag url_for(jersey.image), class: 'img-thumbnail', width: '25%' %></p>
+    <p><%= link_to jersey.name, jersey %></p>
+    <p><%= number_to_currency jersey.price %></p>
+    <% if @cart.include?(jersey) %>
+      <p><%= button_to 'remove from cart', remove_from_cart_path(jersey), method: :delete %></p>
+    <% else %>
+      <p><%= button_to 'add to cart', add_to_cart_path(jersey.id), method: :post %></p>
+    <% end %>
+  <% end %>
 </div>
 
 <%== pagy_bootstrap_nav(@pagy) %>

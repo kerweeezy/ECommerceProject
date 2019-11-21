@@ -1,0 +1,12 @@
+<div class="container">
+  <summary>Shopping Cart</summary>
+  <% if @cart.empty? %>
+    <p>No items in cart</p>
+  <% else %>
+    <ul>
+      <% @cart.each do |jersey| %>
+        <li><%= jersey.name %> - <%= link_to 'remove from cart', remove_from_cart_path(jersey), method: :delete %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

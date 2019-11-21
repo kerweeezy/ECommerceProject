@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'cart/index'
   get '/about', to: 'pages#about', as: 'about'
   get '/contact', to: 'pages#contact', as: 'contact'
+  get '/cart', to: 'cart#index', as: 'cart'
 
   resources :teams, only: %i[index show] do
     collection do
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
       get 'search_results'
     end
   end
+
+  post 'jerseys/add_to_cart/:id', to: 'jerseys#add_to_cart', as: 'add_to_cart'
+  delete 'jerseys/remove_from_cart/:id', to: 'jerseys#remove_from_cart', as: 'remove_from_cart'
 
   root 'teams#index'
 
