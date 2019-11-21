@@ -1,25 +1,10 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
-a, a:link, a:visited {
-  text-decoration: none;
-}
+ $main-text: black;
+ $light-text: white;
 
-$main-text: #2a2a2a;
-$light-text: #888888;
+ .navbar {
+    background-color: #e0e0e031;
+ }
 
 body {
     font-family: 'Roboto Mono', monospace;
@@ -28,16 +13,29 @@ body {
 }
 
 %unemphasized-link {
-    a {
-        color: $main-text;
+    a, a:link, a:visited {
         text-decoration: none;
     }
 }
-.menu {
-    @extend %unemphasized-link;
-    background-color: rgba(255, 255, 255, 0.883);
 
-    a {
-        margin-right: 50px;
+a.card-text{
+    @extend %unemphasized-link;
+
+    color: $main-text;
+}
+
+.pagination {
+    display: inline-block;
+
+    & a {
+        color: $main-text;
+        padding: 8px 16px;
+        font-weight: none;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    & a:hover:not(.active) {
+        background-color:$main-text;
+        color: $light-text;
     }
 }

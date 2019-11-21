@@ -4,7 +4,7 @@ require 'pagy/extras/bootstrap'
 
 class TeamsController < ApplicationController
   def index
-    @pagy, @teams = pagy(Team.all)
+    @pagy, @teams = pagy(Team.all, items: 5)
   end
 
   def show

@@ -7,7 +7,8 @@ class JerseysController < ApplicationController
   before_action :load_cart
 
   def index
-    @pagy, @jerseys = pagy(Jersey.all)
+    @pagy, @jerseys = pagy(Jersey.all, items: 10)
+    @showteams = Team.all
   end
 
   def show
@@ -16,7 +17,13 @@ class JerseysController < ApplicationController
 
   def search_results
     @query = params[:query]
-    @jerseys = Jersey.where('name LIKE ?', "%#{@query}%")
+    @team = params[:team]
+
+    @jerseys = if @team.empty?
+                 Jersey.where('name LIKE ?', "%#{@query}%")
+               else
+                 Jersey.where('name LIKE ? AND team_id LIKE ?', "%#{@query}%", @team.to_s)
+                end
   end
 
   def add_to_cart
