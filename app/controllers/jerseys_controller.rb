@@ -39,6 +39,8 @@ class JerseysController < ApplicationController
   def add_to_cart
     id = params[:id].to_i
 
+    flash[:notice] = 'Jersey successfully added to cart.'
+
     session[:cart] << id unless session[:cart].include?(id)
     redirect_to jerseys_path
   end

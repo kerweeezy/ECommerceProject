@@ -9,7 +9,7 @@
  ol.breadcrumb {
      background-color: rgb(226, 226, 226);
      border-color: rgb(0, 0, 0);
-     border-top: 1px solid;
+     border-top: 3px - 2px solid;
  }
 
 body {
@@ -35,7 +35,7 @@ a.card-text{
 
     & a {
         color: $main-text;
-        padding: 8px 16px;
+        padding: (4px + 4px) 16px;
         font-weight: none;
         font-family: 'Roboto Mono', monospace;
     }
