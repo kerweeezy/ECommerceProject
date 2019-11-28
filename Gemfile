@@ -30,16 +30,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'activeadmin'
 gem 'devise'
-
 gem 'bootstrap', '~>4.3.1'
-
 gem 'pagy'
-
 gem 'rubocop'
-
 gem 'mini_magick'
-
+gem 'image_processing', '~> 1.2'
 gem 'breadcrumbs_on_rails'
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
