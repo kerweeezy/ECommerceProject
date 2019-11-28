@@ -22,8 +22,9 @@ class JerseysController < ApplicationController
     @jerseys = if @team.empty?
                  Jersey.where('name LIKE ?', "%#{@query}%")
                else
-                 Jersey.where('name LIKE ? AND team_id LIKE ?', "%#{@query}%", @team.to_s)
-                end
+                 Jersey.where('name LIKE ? AND team_id LIKE ?',
+                              "%#{@query}%", @team.to_s)
+               end
   end
 
   def add_to_cart
