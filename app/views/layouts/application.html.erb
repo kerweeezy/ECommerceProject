@@ -51,6 +51,9 @@
       </ul>
       </div>
     </nav>
+    <ol class="breadcrumb">
+      <%= render_breadcrumbs :tag => :li, :separator => " // " %>
+    </ol>
     <div class="container-fluid">
       <%= yield %>
     </div>

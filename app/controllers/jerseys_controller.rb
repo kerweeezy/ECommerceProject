@@ -9,10 +9,19 @@ class JerseysController < ApplicationController
   def index
     @pagy, @jerseys = pagy(Jersey.all, items: 10)
     @showteams = Team.all
+
+    add_breadcrumb ' home ', :root_path
+    add_breadcrumb ' jerseys ', :jerseys_path
   end
 
   def show
     @jersey = Jersey.find(params[:id])
+    @team = Team.find(@jersey.team_id)
+
+    add_breadcrumb ' home ', :root_path
+    add_breadcrumb ' teams ', :teams_path
+    add_breadcrumb @team.name, :team_path
+    add_breadcrumb @jersey.name, :jersey_path
   end
 
   def search_results
