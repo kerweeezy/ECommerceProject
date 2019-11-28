@@ -6,7 +6,7 @@
 <h2><%= @team.name %></h2>
 <div class="col">
   <% @team.jerseys.each do |jersey| %>
-    <p><%= image_tag url_for(jersey.image), class: 'img-thumbnail' %></p>
+    <p><%= image_tag url_for(jersey.image), class: 'img-thumbnail', alt: 'jersey' %></p>
     <p><%= link_to jersey.name, jersey %></p>
     <p><%= number_to_currency jersey.price %></p>
     <button type="button" class="btn btn-info">Add to Cart</button>

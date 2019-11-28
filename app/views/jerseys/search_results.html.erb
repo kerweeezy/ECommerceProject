@@ -1,8 +1,12 @@
 <p><%= pluralize(@jerseys.size, 'result') %> for '<%= @query %>'</p>
 
-<div class="col">
+<div class="card-deck">
   <% @jerseys.each do |jersey| %>
-      <%= image_tag url_for(jersey.image), class: 'img-thumbnail', width: '25%' %>
-      <%= link_to jersey.name, jersey, class: 'btn btn-link' %>
+    <div class="card">
+    <%= image_tag url_for(jersey.image), class: 'card-img-top', alt: jersey %>
+    <div class="card-body">
+      <%= link_to jersey.name, jersey, class: 'card-text' %>
+    </div>
+    </div>
   <% end %>
 </div>

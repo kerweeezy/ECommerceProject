@@ -3,7 +3,13 @@
  $light-text: white;
 
  .navbar {
-    background-color: #e0e0e031;
+    background-color: rgb(204, 204, 204);
+ }
+
+ ol.breadcrumb {
+     background-color: rgb(226, 226, 226);
+     border-color: rgb(0, 0, 0);
+     border-top: 1px solid;
  }
 
 body {

@@ -1,6 +1,6 @@
 <% @teams.each do |team| %>
   <div class="card"     >
-    <%= image_tag url_for(team.image), class: 'card-img-top' %>
+    <%= image_tag url_for(team.image), class: 'card-img-top', alt: 'team' %>
     <div class="card-body">
       <%= link_to team.name, team, class: 'card-text' %>
     </div>

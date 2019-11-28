@@ -1,4 +1,4 @@
-<%= image_tag url_for(@jersey.image), class: 'img-thumbnail' %>
+<%= image_tag url_for(@jersey.image), class: 'img-thumbnail', alt: 'jersey' %>
 <p><%= @jersey.name %></p>
 <p><%= number_to_currency @jersey.price %></p>
 <button type="button" class="btn btn-info">Add to Cart</button>

@@ -1,6 +1,6 @@
 <% @jerseys.each do |jersey| %>
   <div class="card">
-  <%= image_tag url_for(jersey.image), class: 'card-img-top' %>
+  <%= image_tag url_for(jersey.image), class: 'card-img-top', alt: jersey %>
   <div class="card-body">
     <%= link_to jersey.name, jersey, class: 'card-text' %>
     <%= number_to_currency jersey.price, class: 'card-text' %>
