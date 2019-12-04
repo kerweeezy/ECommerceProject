@@ -14,7 +14,7 @@
  }
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto" + " Mono", monospace;
     color: $main-text;
     letter-spacing: $tensizing - 9px;
 }
@@ -36,9 +36,9 @@ a.card-text{
 
     & a {
         color: $main-text;
-        padding: (4px + 4px) 16px;
+        padding: (4px + 4px) $tensizing + 6px;
         font-weight: none;
-        font-family: 'Roboto Mono', monospace;
+        font-family: "Roboto" + " Mono", monospace;
     }
 
     & a:hover:not(.active) {
