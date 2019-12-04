@@ -24,6 +24,14 @@ class JerseysController < ApplicationController
     add_breadcrumb '// ' + @jersey.name, :jersey_path
   end
 
+  def new_jerseys
+    @pagy, @jerseys = pagy(Jersey.where('created_at > ?', 45.days.ago), items: 5)
+  end
+
+  def updated_jerseys
+    @pagy, @jerseys = pagy(Jersey.where('updated_at > ?', 7.days.ago), items: 5)
+  end
+
   def search_results
     @query = params[:query]
     @team = params[:team]

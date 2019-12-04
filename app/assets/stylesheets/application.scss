@@ -1,6 +1,7 @@
 
  $main-text: black;
  $light-text: white;
+ $tensizing: 10px;
 
  .navbar {
     background-color: rgb(204, 204, 204);
@@ -9,13 +10,13 @@
  ol.breadcrumb {
      background-color: rgb(226, 226, 226);
      border-color: rgb(0, 0, 0);
-     border-top: 3px - 2px solid;
+     border-top: $tensizing - 9px solid;
  }
 
 body {
     font-family: 'Roboto Mono', monospace;
     color: $main-text;
-    letter-spacing: 1px;
+    letter-spacing: $tensizing - 9px;
 }
 
 %unemphasized-link {

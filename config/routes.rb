@@ -13,9 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :jerseys, only: %i[index show] do
+  resources :jerseys, only: %i[index show new_jerseys updated_jerseys] do
     collection do
       get 'search_results'
+      get 'new_jerseys'
+      get 'updated_jerseys'
     end
   end
 
